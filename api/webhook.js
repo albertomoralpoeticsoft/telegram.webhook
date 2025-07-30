@@ -1,3 +1,5 @@
+// https://vercel.com/alberto-morals-projects/telegram-webhook
+// 
 export default async function handler(req, res) {
 
   if (req.method !== 'POST') {
@@ -25,11 +27,11 @@ export default async function handler(req, res) {
     });
 
     const result = await response.text();
-    res.status(200).send('Forwarded to WP: ' + result);
+    res.status(200).send('Enviado a WP: ' + result);
 
   } catch (err) {
-    
-    console.error('Error forwarding:', err);
+
+    console.error('Error enviando a WP:', err);
     res.status(500).send('Failed to forward');
   }
 }
